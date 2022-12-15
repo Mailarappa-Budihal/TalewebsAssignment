@@ -5,6 +5,8 @@ const {
     isValidMarks,
 } = require("../validation/validation.js");
 
+
+//=======================Student register==========================//
 const studentRegister = async function(req, res) {
     try {
         let data = req.body;

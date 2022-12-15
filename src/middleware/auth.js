@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 
 const authentication = async function(req, res, next) {
     try {
-        token = req.headers['x-api-key']
+        let token = req.headers['x-api-key']
         if (!token) { return res.status(400).send({ status: false, message: "Token is missing" }) }
         decodedToken = jwt.verify(token, "Admin-student-login-panel", (err, decode) => {
             if (err) {

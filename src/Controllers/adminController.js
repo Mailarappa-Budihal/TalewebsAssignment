@@ -9,6 +9,8 @@ const {
 } = require("../validation/validation.js")
 
 
+
+//======================================Admin register=======================//
 const adminRegister = async function(req, res) {
     try {
         let data = req.body
@@ -43,7 +45,7 @@ const adminRegister = async function(req, res) {
         }
         let CheckUser = await adminModel.findOne({ email: email })
         if (CheckUser) {
-            return res.status(200).send({ status: false, message: "you are already registered please go to log in page " })
+            return res.status(409).send({ status: false, message: "you are already registered please go to log in page " })
         }
         if (!isValidPwd(password))
             return res.status(400).send({

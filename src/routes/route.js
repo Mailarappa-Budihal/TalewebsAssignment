@@ -15,7 +15,7 @@ router.post("/registerAdmin", adminController.adminRegister)
 router.post("/logInAdmin", adminController.logInAdmin)
 
 
-//============================student panel api's=================================//
+//============================student api's=================================//
 // create users 
 
 //--------------------------------studentRegister--------------------------------//
@@ -30,8 +30,6 @@ router.put("/editStudent", middleware.authentication, middleware.Authorisation, 
 
 //----------------------------deleteStudent--------------------------------------//
 router.delete("/deleteStudent", middleware.authentication, middleware.Authorisation, studentController.deleteStudent)
-
-
 
 
 router.all("/*", function(req, res) {
